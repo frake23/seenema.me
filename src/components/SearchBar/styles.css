@@ -1,0 +1,24 @@
+.searchBar {
+    background: #cfcfcf;
+    width: 200px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-family: inherit;
+    transition: width .3s, background-color .5s;
+}
+
+.searchBar:focus {
+    background: #ffffff;
+    outline-width: 0;
+    width: 400px;
+}
+
+.searchBar:hover {
+    background: #ffffff;
+}
+
+.form-box {
+    margin-left: 20px;
+}
