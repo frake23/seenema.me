@@ -1,36 +1,33 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.css';
 
 const SearchResult = (props) => {
-    let content;
-    if (props.hosting === 'youtube') {
-        content =
-            <Fragment>
-                <div className="previewBox">
-                    <img src={props.result.snippet.thumbnails.medium.url} alt={props.result.snippet.title} className="previewImage"/>
-                </div>
-                <div className="infoBox">
-                    <span className="resultTitle">
-                        {props.result.snippet.title}
-                    </span>
-                    <span className="resultChannel">
-                        {props.result.snippet.channelTitle}
-                    </span>
-                </div>
-            </Fragment>
-    }
     return (
         <div className="contentBox">
-            {content}
+            <div className="previewBox">
+                <img src={props.result.image} alt={props.result.title} className="previewImage"/>
+            </div>
+            <div className="infoBox">
+                <span className="resultTitle">
+                    {props.result.title}
+                </span>
+                <span className="resultChannel">
+                    {props.result.channel}
+                </span>
+            </div>
         </div>
     );
 };
 
 SearchResult.propTypes = {
-    hosting: PropTypes.string,
-    result: PropTypes.object
+    result: PropTypes.shape({
+        image: PropTypes.string,
+        title: PropTypes.string,
+        channel: PropTypes.string,
+        id: PropTypes.string
+    }).isRequired
 };
 
 export default SearchResult;

@@ -7,14 +7,14 @@ const InvisibleComponent = (props) => {
             opacity: "1",
             visibility: "visible",
             transform: `translateY(0)`,
-            transition: "opacity .15s, transform .15s, visibility .15s"
+            transition: "opacity .25s, transform .25s, visibility .25s"
         },
         closed: {
             opacity: "0",
             pointerEvents: "none",
             visibility: "hidden",
             transform: `translateY(-10px)`,
-            transition: "opacity .15s, transform .15s, visibility .15s"
+            transition: "opacity .25s, transform .25s, visibility .25s"
         }
     };
 

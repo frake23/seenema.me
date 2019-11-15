@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './styles.css';
 
@@ -18,7 +19,7 @@ const SearchResultList = (props) => {
             <ul className="searchResultsList">
                 <li className="resultItem">
                     {props.searchResults.map(searchResult => {
-                        return (<SearchResult hosting={props.hosting} result={searchResult} key={searchResult.id.videoId}/>)
+                        return (<SearchResult result={searchResult} key={searchResult.id.videoId}/>)
                     })}
                 </li>
             </ul>
@@ -33,9 +34,15 @@ const SearchResultList = (props) => {
 };
 
 SearchResultList.propTypes = {
-    hosting: PropTypes.string,
     searchResults: PropTypes.array,
     show: PropTypes.bool
 };
 
-export default SearchResultList;
+const mapStateToProps = ({ search }) => ({
+    show: search.resultsVisibility,
+    searchResults: search.results
+});
+
+export default connect(
+    mapStateToProps,
+)(SearchResultList);

@@ -2,38 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88dff072-b8bc-4920-9abb-698612fcce34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InvisibleComponent/InvisibleComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PageWrapper/PageWrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PageWrapper/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Search/Search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Search/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchBar/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchResult/SearchResult.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchResult/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchResultsList/SearchResultList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchResultsList/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/ds.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/list.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/seenema.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/tg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/twitch-dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/twitch.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/youtube-dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/youtube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MainPage/MainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/searchActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/youtube.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/searchReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InvisibleComponent/InvisibleComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InvisibleComponent/InvisibleComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchResult/SearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResult/SearchResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchResultsList/SearchResultList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResultsList/SearchResultList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,8 +100,27 @@
       <workItem from="1572713957849" duration="3475000" />
       <workItem from="1572797863346" duration="9512000" />
       <workItem from="1572817003048" duration="1683000" />
-      <workItem from="1572971342184" duration="14615000" />
+      <workItem from="1572971342184" duration="14914000" />
+      <workItem from="1573419897765" duration="599000" />
+      <workItem from="1573472767207" duration="219000" />
+      <workItem from="1573472998768" duration="96000" />
+      <workItem from="1573473125825" duration="14000" />
+      <workItem from="1573473168350" duration="163000" />
+      <workItem from="1573473743716" duration="4853000" />
+      <workItem from="1573488159446" duration="24000" />
+      <workItem from="1573488192746" duration="3890000" />
+      <workItem from="1573574435846" duration="10598000" />
+      <workItem from="1573763588174" duration="1093000" />
+      <workItem from="1573845924109" duration="6452000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1572989166069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572989166069</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +138,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>
