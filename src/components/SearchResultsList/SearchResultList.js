@@ -6,12 +6,13 @@ import './styles.css';
 
 import SearchResult from "../SearchResult/SearchResult";
 import InvisibleComponent from "../InvisibleComponent/InvisibleComponent";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const SearchResultList = (props) => {
     let content;
     if (props.searchResults.length === 0) {
         content =
-            <div className="nothingFoundBox">
+            <div className="centeringWrapper">
                 <span className="nothingFoundText">Ничего не найдено</span>
             </div>
     } else {
@@ -19,7 +20,7 @@ const SearchResultList = (props) => {
             <ul className="searchResultsList">
                 <li className="resultItem">
                     {props.searchResults.map(searchResult => {
-                        return (<SearchResult result={searchResult} key={searchResult.id.videoId}/>)
+                        return (<SearchResult result={searchResult} key={searchResult.id}/>)
                     })}
                 </li>
             </ul>
@@ -27,7 +28,7 @@ const SearchResultList = (props) => {
     return (
         <InvisibleComponent show={props.show}>
             <div className="searchResultListBox">
-                {content}
+                {props.loading ? <div className="centeringWrapper"><LoadingSpinner/></div> : content}
             </div>
         </InvisibleComponent>
     );
@@ -35,12 +36,14 @@ const SearchResultList = (props) => {
 
 SearchResultList.propTypes = {
     searchResults: PropTypes.array,
-    show: PropTypes.bool
+    show: PropTypes.bool,
+    loading: PropTypes.bool
 };
 
 const mapStateToProps = ({ search }) => ({
+    searchResults: search.results,
     show: search.resultsVisibility,
-    searchResults: search.results
+    loading: search.loading
 });
 
 export default connect(
