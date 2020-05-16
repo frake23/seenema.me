@@ -2,23 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import './styles.css';
+import styles from './SearchResultList.module.css';
 
 import SearchResult from "../SearchResult/SearchResult";
-import InvisibleComponent from "../InvisibleComponent/InvisibleComponent";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import InvisibleComponent from "../../InvisibleComponent/InvisibleComponent";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const SearchResultList = (props) => {
     let content;
     if (props.searchResults.length === 0) {
         content =
-            <div className="centeringWrapper">
-                <span className="nothingFoundText">Ничего не найдено</span>
+            <div className={styles.centeringWrapper}>
+                <span className={styles.nothingFoundText}>Ничего не найдено</span>
             </div>
     } else {
         content =
-            <ul className="searchResultsList">
-                <li className="resultItem">
+            <ul className={styles.searchResultsList}>
+                <li className={styles.resultItem}>
                     {props.searchResults.map(searchResult => {
                         return (<SearchResult result={searchResult} key={searchResult.id}/>)
                     })}
@@ -27,8 +27,8 @@ const SearchResultList = (props) => {
 }
     return (
         <InvisibleComponent show={props.show}>
-            <div className="searchResultListBox">
-                {props.loading ? <div className="centeringWrapper"><LoadingSpinner/></div> : content}
+            <div className={styles.searchResultListBox}>
+                {props.loading ? <div className={styles.centeringWrapper}><LoadingSpinner/></div> : content}
             </div>
         </InvisibleComponent>
     );

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './styles.css';
+import styles from './LoadingSpinner.module.css';
 
 const LoadingSpinner = () => {
     // noinspection CheckTagEmptyBody
     return (
-        <div className="lds-spinner">
+        <div className={styles.ldsSpinner}>
             <div></div>
             <div></div>
             <div></div>

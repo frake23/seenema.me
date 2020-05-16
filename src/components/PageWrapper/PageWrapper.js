@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './styles.css';
+import styles from './PageWrapper.module.css';
 
 const PageWrapper = (props) => {
     return (
-        <div className="pageWrapper">
+        <div className={styles.pageWrapper}>
             {props.children}
         </div>
     );

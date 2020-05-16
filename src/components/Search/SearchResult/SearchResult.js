@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import styles from './SearchResult.module.css';
 
 const SearchResult = (props) => {
     return (
-        <div className="contentBox">
-            <div className="previewBox">
-                <img src={props.result.image} alt={props.result.title} className="previewImage"/>
+        <div className={styles.contentBox}>
+            <div className={styles.previewBox}>
+                <img src={props.result.image} alt={props.result.title} className={styles.previewImage}/>
             </div>
-            <div className="infoBox">
-                <span className="resultTitle">
+            <div className={styles.infoBox}>
+                <span className={styles.resultTitle}>
                     {props.result.title}
                 </span>
-                <span className="resultChannel">
+                <span className={styles.resultChannel}>
                     {props.result.channel}
                 </span>
             </div>

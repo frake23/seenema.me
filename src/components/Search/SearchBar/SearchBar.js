@@ -6,16 +6,16 @@ import {
     setSearchInputText,
     setSearchResultsListVisibility,
     fetchSearchResults
-} from '../../actions/searchActions'
+} from '../../../actions/searchActions'
 
-import './styles.css';
+import styles from './SearchBar.module.css';
 
 class SearchBar extends Component {
     render() {
         return (
-            <div className="form-box">
+            <div className={styles.formBox}>
                 <form onSubmit={(e) => {this.props.fetchResults(e)}}>
-                    <input className="searchBar"
+                    <input className={styles.searchBar}
                         type="text"
                         placeholder="Ссылка или поиск"
                         value={this.props.inputText}
