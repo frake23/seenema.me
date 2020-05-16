@@ -1,9 +1,9 @@
-import axios from "axios";
+//кто-то спер мой ключ, обидно
+import config from './config.json';
+const API_KEY = config.API_KEY
 
-const API_KEY = 'AIzaSyDAG1LSJS_KYvOMDMbk6ICbojSLNCQo9aY';
-
-export const youtubeSearch = (q) => {
-    return axios.get('https://www.googleapis.com/youtube/v3/search', {
+export const youtubeSearch = async (q) => {
+   /*  return axios.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
             part: 'snippet',
             q: q,
@@ -11,7 +11,19 @@ export const youtubeSearch = (q) => {
             type: 'video',
             key: API_KEY
         }
-    });
+    }); */
+    const url = new URL('https://www.googleapis.com/youtube/v3/search');
+    const params = {
+        part: 'snippet',
+        q: q,
+        maxResults: 15,
+        type: 'video',
+        key: API_KEY
+    }
+    url.search = new URLSearchParams(params).toString()
+    
+    const response = await fetch(url)
+    return await response.json()
 };
 
 export const ytItemToResultObject = (item) => {

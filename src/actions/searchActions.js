@@ -45,6 +45,7 @@ export const fetchSearchResults = () => {
     return (dispatch, getState) => {
         const state = getState();
         const inputText = state.search.inputText;
+        console.log(1)
 
         dispatch(setSearchLoading(true));
         dispatch(setSearchResultsListVisibility(true));
@@ -55,7 +56,7 @@ export const fetchSearchResults = () => {
             if (state.search.hosting === 'youtube') {
                 return youtubeSearch(inputText)
                     .then((res) =>
-                        dispatch(setSearchResutlts(res.data.items.map(result => ytItemToResultObject(result))))
+                        dispatch(setSearchResutlts(res.items.map(result => ytItemToResultObject(result))))
                     )
                     .then(() => dispatch(setSearchLoading(false)))
             }
