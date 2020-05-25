@@ -1,0 +1,6 @@
+.mainBody {
+    display: flex;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    padding: 15px;
+}

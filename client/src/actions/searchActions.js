@@ -45,7 +45,6 @@ export const fetchSearchResults = () => {
     return (dispatch, getState) => {
         const state = getState();
         const inputText = state.search.inputText;
-        console.log(1)
 
         dispatch(setSearchLoading(true));
         dispatch(setSearchResultsListVisibility(true));
@@ -54,9 +53,19 @@ export const fetchSearchResults = () => {
             return Promise.resolve();
         else {
             if (state.search.hosting === 'youtube') {
-                return youtubeSearch(inputText)
+                return fetch(`http://localhost:3001/search/youtube?q=${inputText}`)
                     .then((res) =>
-                        dispatch(setSearchResutlts(res.items.map(result => ytItemToResultObject(result))))
+                        res.json()
+                    )
+                    .then((json) =>
+                        dispatch(setSearchResutlts(json.items.map(item => { 
+                            return {
+                                image: item.snippet.thumbnails.medium.url,
+                                title: item.snippet.title,
+                                channel: item.snippet.channelTitle,
+                                id: item.id.videoId
+                            }
+                        })))
                     )
                     .then(() => dispatch(setSearchLoading(false)))
             }

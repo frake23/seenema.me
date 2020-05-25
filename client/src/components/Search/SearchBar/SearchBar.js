@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -10,24 +10,22 @@ import {
 
 import styles from './SearchBar.module.css';
 
-class SearchBar extends Component {
-    render() {
-        return (
-            <div className={styles.formBox}>
-                <form onSubmit={(e) => {this.props.fetchResults(e)}}>
-                    <input className={styles.searchBar}
-                        type="text"
-                        placeholder="Ссылка или поиск"
-                        value={this.props.inputText}
-                        onChange={(e) => (this.props.setInputText(e.target.value))}
-                        onBlur={() => this.props.setResultsListVisibility(false)}
-                        onFocus={() => this.props.results.length !== 0 ? this.props.setResultsListVisibility(true): null}
-                    />
-                </form>
-            </div>
-        );
-    }
-}
+const SearchBar = (props) => {
+    return (
+        <div className={styles.formBox}>
+            <form onSubmit={(e) => {props.fetchResults(e)}}>
+                <input className={styles.searchBar}
+                       type="text"
+                       placeholder="Ссылка или поиск"
+                       value={props.inputText}
+                       onChange={(e) => (props.setInputText(e.target.value))}
+                       onBlur={() => props.setResultsListVisibility(false)}
+                       onFocus={() => props.results.length !== 0 ? props.setResultsListVisibility(true): null}
+                />
+            </form>
+        </div>
+    );
+};
 
 SearchBar.propTypes = {
     inputText: PropTypes.string.isRequired,

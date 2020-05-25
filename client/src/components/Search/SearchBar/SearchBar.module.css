@@ -22,3 +22,14 @@
 .formBox {
     margin-left: 20px;
 }
+
+@media screen and (max-width: 600px){
+    .searchBar {
+        height: 20px;
+    }
+    .searchBar:focus {
+        background: #ffffff;
+        width: 200px;
+        width: 100%;
+    }
+}
