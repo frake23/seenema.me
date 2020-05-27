@@ -21,7 +21,14 @@ router.get('/youtube', (req, res) => {
             response.json()
         )
         .then(json =>
-            res.json(json)
+            res.json(json.items.map(item => { 
+                return {
+                    image: item.snippet.thumbnails.medium.url,
+                    title: item.snippet.title,
+                    channel: item.snippet.channelTitle,
+                    id: item.id.videoId
+                }
+            }))
         )
 })
 

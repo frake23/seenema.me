@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import {
-    setSearchInputText,
     setSearchResultsListVisibility,
     fetchSearchResults
 } from '../../../actions/searchActions'
@@ -11,14 +10,16 @@ import {
 import styles from './SearchBar.module.css';
 
 const SearchBar = (props) => {
+    const [inputText, setInputText] = useState('');
+
     return (
         <div className={styles.formBox}>
-            <form onSubmit={(e) => {props.fetchResults(e)}}>
+            <form onSubmit={(e) => {props.fetchResults(e, inputText)}}>
                 <input className={styles.searchBar}
                        type="text"
                        placeholder="Ссылка или поиск"
-                       value={props.inputText}
-                       onChange={(e) => (props.setInputText(e.target.value))}
+                       value={inputText}
+                       onChange={e => setInputText(e.target.value)}
                        onBlur={() => props.setResultsListVisibility(false)}
                        onFocus={() => props.results.length !== 0 ? props.setResultsListVisibility(true): null}
                 />
@@ -28,32 +29,28 @@ const SearchBar = (props) => {
 };
 
 SearchBar.propTypes = {
-    inputText: PropTypes.string.isRequired,
     results: PropTypes.arrayOf(PropTypes.shape({
         image: PropTypes.string,
         title: PropTypes.string,
         channel: PropTypes.string,
         id: PropTypes.string
     })).isRequired,
-    setInputText: PropTypes.func.isRequired,
     setResultsListVisibility: PropTypes.func.isRequired,
     fetchResults: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({search}) => {
     return {
-        inputText: search.inputText,
         results: search.results
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        setInputText: (inputText) => dispatch(setSearchInputText(inputText)),
         setResultsListVisibility: (visibility) => dispatch(setSearchResultsListVisibility(visibility)),
-        fetchResults: (e) => {
+        fetchResults: (e, inputText) => {
             e.preventDefault();
-            return dispatch(fetchSearchResults())
+            return dispatch(fetchSearchResults(inputText))
         }
     }
 };
