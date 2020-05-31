@@ -1,6 +1,23 @@
 .mainBody {
     display: flex;
     box-sizing: border-box;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     padding: 15px;
+    flex-wrap: nowrap;
+}
+
+.videoContent {
+    flex: 1 1 auto;
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 600px){
+    .mainBody {
+        flex-direction: column;
+    }
+    .videoContent {
+        margin-right: 0;
+        margin-bottom: 15px;
+        flex: 0 0 auto;
+    }
 }

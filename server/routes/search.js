@@ -1,9 +1,9 @@
-var express = require('express');
-var fetch = require('node-fetch');
+const express = require('express');
+const fetch = require('node-fetch');
 
-var config = require('../config.json');
+const config = require('../config.json');
 
-var router = express.Router();
+const router = express.Router();
 
 router.get('/youtube', (req, res) => {
     const url = new URL('https://www.googleapis.com/youtube/v3/search');

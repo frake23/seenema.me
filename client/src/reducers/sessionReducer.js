@@ -1,18 +1,18 @@
 import {
-    SET_ROOM, SET_USERNAME
+    SET_ROOMNAME, SET_USERNAME
 } from '../actions/sessionActions';
 
 const initialState = {
-    room: null,
+    roomname: '',
     username: ''
 }
 
 const session = (state=initialState, action) => {
     switch (action.type) {
-        case SET_ROOM:
+        case SET_ROOMNAME:
             return {
                 ...state,
-                room: action.payload
+                roomname: action.payload
             }
         case SET_USERNAME:
             return {

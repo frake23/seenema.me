@@ -1,10 +1,10 @@
-const SET_ROOM = 'SET_ROOM';
+const SET_ROOMNAME = 'SET_ROOMNAME';
 const SET_USERNAME = 'SET_USERNAME';
 
-export const setRoom = room => {
+export const setRoomname = roomname => {
     return {
-        type: SET_ROOM,
-        payload: room
+        type: SET_ROOMNAME,
+        payload: roomname
     }
 }
 
@@ -15,4 +15,4 @@ export const setUsername = username => {
     }
 };
 
-export { SET_USERNAME, SET_ROOM };
+export { SET_USERNAME, SET_ROOMNAME };

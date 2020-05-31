@@ -10,12 +10,12 @@ import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const SearchResultList = (props) => {
     let content;
-    if (props.searchResults.length === 0) {
+    if (props.searchResults.length === 0)
         content =
             <div className={styles.centeringWrapper}>
                 <span className={styles.nothingFoundText}>Ничего не найдено</span>
             </div>
-    } else {
+    else
         content =
             <ul className={styles.searchResultsList}>
                 <li className={styles.resultItem}>
@@ -24,13 +24,16 @@ const SearchResultList = (props) => {
                     })}
                 </li>
             </ul>
-}
     return (
-        <InvisibleComponent show={props.show}>
-            <div className={styles.searchResultListBox}>
-                {props.loading ? <div className={styles.centeringWrapper}><LoadingSpinner/></div> : content}
-            </div>
-        </InvisibleComponent>
+        <div style={{zIndex: '999'}}>
+            <InvisibleComponent show={props.show}>
+                <div>
+                    <div className={styles.searchResultListBox}>
+                        {props.loading ? <div className={styles.centeringWrapper}><LoadingSpinner/></div> : content}
+                    </div>
+                </div>
+            </InvisibleComponent>
+        </div>
     );
 };
 

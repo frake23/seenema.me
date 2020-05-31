@@ -1,0 +1,29 @@
+.chat {
+    width: 350px;
+    background: #3C3C49;
+    border-radius: 10px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+}
+
+.header {
+    background: #303237;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 0 25px;
+}
+
+.messages {
+    flex: 1 1 auto;
+}
+
+@media screen and (max-width: 600px){
+    .chat {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+}

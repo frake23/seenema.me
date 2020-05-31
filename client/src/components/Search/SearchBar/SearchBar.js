@@ -14,7 +14,7 @@ const SearchBar = (props) => {
 
     return (
         <div className={styles.formBox}>
-            <form onSubmit={(e) => {props.fetchResults(e, inputText)}}>
+            <form onSubmit={(e) => props.fetchResults(e, inputText)}>
                 <input className={styles.searchBar}
                        type="text"
                        placeholder="Ссылка или поиск"
