@@ -21,9 +21,10 @@
     flex: 1 1 auto;
 }
 
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
     .chat {
         width: 100%;
         flex: 1 1 auto;
+        height: 100%;
     }
-}
+} */

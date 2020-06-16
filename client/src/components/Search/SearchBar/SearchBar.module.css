@@ -23,7 +23,7 @@
     margin-left: 20px;
 }
 
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
     .searchBar {
         height: 20px;
     }
@@ -32,4 +32,4 @@
         width: 200px;
         width: 100%;
     }
-}
+} */

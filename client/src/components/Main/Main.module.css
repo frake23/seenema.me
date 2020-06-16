@@ -11,7 +11,7 @@
     margin-right: 15px;
 }
 
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
     .mainBody {
         flex-direction: column;
     }
@@ -21,3 +21,4 @@
         flex: 0 0 auto;
     }
 }
+ */

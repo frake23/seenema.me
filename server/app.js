@@ -33,5 +33,18 @@ app.use(session({
 app.use('/search', searchRouter);
 app.use('/room', roomRouter);
 
+io.on('connection', socket => {
+    socket.on('joinRoom', ({ username, roomname }) => {
+        console.log(username, roomname);
+        console.log(Object.keys(io.sockets.sockets).length);
+
+        socket.join(roomname); 
+    });
+    socket.on('pause', ({ username, roomname }) => {
+        socket.broadcast.to(roomname).emit('pause');
+        console.log('video paused')
+    });
+});
+
 mongoose.connect('mongodb://localhost/seenema', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false})
 server.listen(3001)

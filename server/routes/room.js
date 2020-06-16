@@ -1,27 +1,38 @@
 const express = require('express');
 
+const utils = require('../utils/utils')
+
 const Room = require('../models/room');
 
 const router = express.Router();
 
 router.post('/create', (req, res) => {
-    if (!req.session.username)
-        req.session.username = Math.random().toString(36).substr(2, 9);
-
-    const roomName = Math.random().toString(36).substr(2, 6).toUpperCase();
+    const roomName = utils.createRoomname();
     const room = new Room({
         name: roomName
     });
-    room.save().then(room => console.log(room));
-    res.json({
+    room.save();
+    res.send({
         roomname: room.name,
-        username: req.session.username
     });
     
 });
 
 router.get('/*', (req, res) => {
-    //console.log(req.path.s)// Room.find({name: req.path}).then(room => console.log(room))
+    if (!req.session.username)
+        req.session.username = utils.createUsername();
+
+    const roomname = req.query.name;
+    Room.findOne({name: roomname})
+        .then((room) => {
+            if (!room)
+                res.status(404).send({ message: 'Room not found' })
+            else
+                res.send({
+                    roomname,
+                    username: req.session.username
+                })
+        })
 });
 
 module.exports = router;
